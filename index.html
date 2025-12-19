@@ -3,30 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Salsabila Hadiana Putri</title>
-    <!-- Jelaskan Kodingan ini apa -->
+    <title>Kalkulator Asaa</title>
+    <!-- Bagian ini berfungsi untuk mengimpor framework Tailwind CSS untuk styling instan, 
+         serta Google Fonts 'Inter' untuk tampilan tipografi yang modern dan bersih. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Menggunakan font Inter */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Efek klik tombol yang lebih baik */
-        .btn-calc {
-            transition: all 0.1s ease-in-out;
-        }
-        .btn-calc:active {
-            transform: scale(0.95);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
 
     <div class="w-full max-w-sm bg-gray-800 rounded-2xl shadow-2xl p-6 space-y-4">
         
-        <!-- Jelaskan Kodingan ini apa -->
+        <!-- Bagian Header Visual: Berfungsi untuk memberikan identitas visual/banner agar tampilan kalkulator tidak kaku -->
         <div>
             <img id="statusImage" 
                  src="https://placehold.co/400x100/374151/E5E7EB?text=Kalkulator" 
@@ -34,41 +22,48 @@
                  class="w-full rounded-lg transition-all duration-300 ease-in-out shadow-inner">
         </div>
 
-        <!-- Jelaskan Kodingan ini apa -->
+        <!-- Bagian Layar/Display: Area input readonly untuk menampilkan angka yang ditekan dan hasil perhitungan akhir -->
         <div class="bg-gray-900 rounded-lg p-4 shadow-inner">
             <input type="text" id="display" 
                    class="w-full bg-transparent text-right text-5xl font-mono text-white border-0 outline-none p-2" 
                    readonly 
                    placeholder="0">
         </div>
+		
+        <!-- Bagian Identitas Pengguna: Menampilkan Nama dan NIM sebagai pemilik proyek kalkulator ini -->
+        <div class="flex flex-col items-center justify-center bg-gray-900/50 rounded-2xl p-3 border border-gray-700">
+            <h2 class="text-blue-400 font-bold text-lg tracking-wide uppercase">Tugas Kalkulator</h2>
+            <p class="text-gray-300 text-sm font-medium">Nama: <span class="text-white">Salsabila Hadiana Putri</span></p>
+            <p class="text-gray-300 text-sm font-medium">NIM: <span class="text-white">1710624153</span></p>
+        </div>
 
-        <!-- Jelaskan Kodingan ini apa -->
+        <!-- Bagian Grid Tombol: Mengatur tata letak seluruh tombol angka dan operator menggunakan CSS Grid 4 kolom -->
         <div class="grid grid-cols-4 gap-3">
-            <!-- Jelaskan Kodingan ini apa -->
+            <!--  Baris Fungsi Khusus: Tombol untuk menghapus (Clear), Hapus satu karakter (DEL), Persen, dan Pembagian -->
             <button data-value="C" class="btn-calc text-2xl font-bold bg-red-600 hover:bg-red-500 rounded-lg p-5 shadow-md text-white">C</button>
             <button data-value="DEL" class="btn-calc text-2xl font-bold bg-gray-600 hover:bg-gray-500 rounded-lg p-5 shadow-md text-white">DEL</button>
             <button data-value="%" class="btn-calc text-2xl font-bold bg-gray-600 hover:bg-gray-500 rounded-lg p-5 shadow-md text-white">%</button>
             <button data-value="/" class="btn-calc text-2xl font-bold bg-blue-600 hover:bg-blue-500 rounded-lg p-5 shadow-md text-white">/</button>
 
-            <!--  Jelaskan Kodingan ini apa  -->
+            <!--  Baris Angka 7-9 dan Operator Perkalian -->
             <button data-value="7" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">7</button>
             <button data-value="8" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">8</button>
             <button data-value="9" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">9</button>
-            <button data-value="*" class="btn-calc text-2xl font-bold bg-blue-600 hover:bg-blue-500 rounded-lg p-5 shadow-md text-white">*</button>
+            <button data-value="*" class="btn-calc text-2xl font-bold bg-blue-600 hover:bg-blue-500 rounded-lg p-5 shadow-md text-white">x</button>
 
-            <!--  Jelaskan Kodingan ini apa  -->
+            <!--  Baris Angka 4-6 dan Operator Pengurangan -->
             <button data-value="4" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">4</button>
             <button data-value="5" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">5</button>
             <button data-value="6" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">6</button>
             <button data-value="-" class="btn-calc text-2xl font-bold bg-blue-600 hover:bg-blue-500 rounded-lg p-5 shadow-md text-white">-</button>
 
-            <!--  Jelaskan Kodingan ini apa  -->
+            <!--  Baris Angka 1-3 dan Operator Penambahan -->
             <button data-value="1" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">1</button>
             <button data-value="2" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">2</button>
             <button data-value="3" class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">3</button>
             <button data-value="+" class="btn-calc text-2xl font-bold bg-blue-600 hover:bg-blue-500 rounded-lg p-5 shadow-md text-white">+</button>
 
-            <!--  Jelaskan Kodingan ini apa  -->
+            <!--  Baris Terakhir: Angka nol (mengambil 2 kolom), titik desimal, dan tombol Sama Dengan (=)  -->
             <button data-value="0" class="btn-calc col-span-2 text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">0</button>
             <button data-value="." class="btn-calc text-2xl font-bold bg-gray-700 hover:bg-gray-600 rounded-lg p-5 shadow-md text-white">.</button>
             <button data-value="=" class="btn-calc text-2xl font-bold bg-green-600 hover:bg-green-500 rounded-lg p-5 shadow-md text-white">=</button>
@@ -76,149 +71,7 @@
 
     </div>
 
-    <script>
-        //  Jelaskan Kodingan ini apa 
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            //  Jelaskan Kodingan ini apa 
-            const display = document.getElementById('display');
-            const statusImage = document.getElementById('statusImage');
-            const buttons = document.querySelectorAll('.btn-calc');
+    <script src="script.js"></script>
 
-            //  Jelaskan Kodingan ini apa 
-            const imgNormal = 'https://placehold.co/400x100/374151/E5E7EB?text=Kalkulator';
-            const imgSuccess = 'https://placehold.co/400x100/16A34A/FFFFFF?text=Sukses!';
-            const imgError = 'https://placehold.co/400x100/DC2626/FFFFFF?text=Error!';
-
-            /**
-              Jelaskan Kodingan ini apa 
-             */
-            function changeImage(state) {
-                if (state === 'success') {
-                    statusImage.src = imgSuccess;
-                    statusImage.alt = "Perhitungan Sukses";
-                } else if (state === 'error') {
-                    statusImage.src = imgError;
-                    statusImage.alt = "Error Perhitungan";
-                } else {
-                    //  Jelaskan Kodingan ini apa 
-                    statusImage.src = imgNormal;
-                    statusImage.alt = "Status Kalkulator";
-                }
-            }
-
-            /**
-              Jelaskan Kodingan ini apa 
-             */
-            function clearDisplay() {
-                display.value = '';
-                changeImage('normal'); // Memanggil function untuk merubah gambar
-            }
-
-            /**
-              Jelaskan Kodingan ini apa 
-             */
-            function deleteLastChar() {
-                display.value = display.value.slice(0, -1);
-            }
-
-            /**
-              Jelaskan Kodingan ini apa 
-             */
-            function appendToDisplay(value) {
-                display.value += value;
-            }
-
-            /**
-              Jelaskan Kodingan ini apa 
-             */
-            function calculateResult() {
-                //  Jelaskan Kodingan ini apa 
-                if (display.value === '') {
-                    changeImage('error');
-                    display.value = 'Kosong!';
-                    //  Jelaskan Kodingan ini apa 
-                    setTimeout(clearDisplay, 1500);
-                    return;
-                }
-
-                try {
-                    //  Jelaskan Kodingan ini apa 
-                    let result = eval(display.value
-                        .replace(/%/g, '/100') //  Jelaskan Kodingan ini apa 
-                    ); 
-                    
-                    //  Jelaskan Kodingan ini apa 
-                    if (isFinite(result)) {
-                        display.value = result;
-                        changeImage('success'); //  Jelaskan Kodingan ini apa 
-                    } else {
-                        throw new Error("Hasil tidak valid");
-                    }
-
-                } catch (error) {
-                    console.error("Error kalkulasi:", error);
-                    display.value = 'Error';
-                    changeImage('error'); //  Jelaskan Kodingan ini apa 
-                    setTimeout(clearDisplay, 1500);
-                }
-            }
-
-
-            //  Jelaskan Kodingan ini apa 
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const value = button.getAttribute('data-value');
-
-                    //  Jelaskan Kodingan ini apa 
-                    switch(value) {
-                        case 'C':
-                            //  Jelaskan Kodingan ini apa 
-                            clearDisplay();
-                            break;
-                        case 'DEL':
-                            //  Jelaskan Kodingan ini apa 
-                            deleteLastChar();
-                            break;
-                        case '=':
-                            //  Jelaskan Kodingan ini apa 
-                            calculateResult();
-                            break;
-                        default:
-                            //  Jelaskan Kodingan ini apa 
-                            if (statusImage.src === imgSuccess || statusImage.src === imgError) {
-                                clearDisplay();
-                            }
-                            appendToDisplay(value);
-                            break;
-                    }
-                });
-            });
-
-            //  Jelaskan Kodingan ini apa 
-            document.addEventListener('keydown', (e) => {
-                const key = e.key;
-
-                if (key >= '0' && key <= '9' || key === '.' || key === '+' || key === '-' || key === '*' || key === '/' || key === '%') {
-                    if (statusImage.src === imgSuccess || statusImage.src === imgError) {
-                        clearDisplay();
-                    }
-                    appendToDisplay(key);
-                    e.preventDefault();
-                } else if (key === 'Enter' || key === '=') {
-                    calculateResult();
-                    e.preventDefault();
-                } else if (key === 'Backspace') {
-                    deleteLastChar();
-                    e.preventDefault();
-                } else if (key === 'Escape' || key.toLowerCase() === 'c') {
-                    clearDisplay();
-                    e.preventDefault();
-                }
-            });
-
-        });
-    </script>
 </body>
 </html>
-
